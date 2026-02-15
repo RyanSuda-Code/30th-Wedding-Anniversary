@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="main.css">
     <title>30th Anniversary Main page</title>
 </head>
 <body>
@@ -20,14 +20,29 @@
         <span></span>
         <span></span>
     </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#images">Images</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <div class="hero-container">
-            
+        <div class="hero-container" id="home">
+            <img src="./Assets/19.jpg" alt="Mommy and Daddy under the sakura tree" class="hero-img1">
+            <section>
+                <h1>
+                    30 years of Love<br>
+                    <span lang="ja">三十年の愛</span>
+                </h1>
+            </section>
         </div>
 
-        <div class="video-gallery"></div>
+        <div class="video-gallery" id="video"></div>
 
-        <div class="img-gallery"></div>
+        <div class="img-gallery" id="images"></div>
     </main>
 </body>
 </html>
