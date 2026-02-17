@@ -55,3 +55,23 @@ main {
     margin-top: 10px;
     text-align: center;
 }
+
+video {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+
+.video-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.video-card.active {
+  transform: rotate(0deg) scale(1.03);
+}

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="main.css">
     <title>30th Anniversary Main page</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="petals">
@@ -46,9 +47,13 @@
 
         <div class="video-gallery" id="video">
             <h2>Memories / <span lang="ja">思い出</span></h2>
-            <video controls>
-                <source src="./Assets/MD funny prank.mp4" type="video/mp4">
-            </video>
+
+            <div class="video-card">
+               <video controls class="memory-video">
+                    <source src="./Assets/MD funny prank.mp4" type="video/mp4">
+                </video> 
+            </div>
+            
         </div>
 
         <div class="divider">
@@ -56,6 +61,7 @@
         </div>
 
         <div class="img-gallery" id="images"></div>
+
     </main>
 </body>
 </html>
