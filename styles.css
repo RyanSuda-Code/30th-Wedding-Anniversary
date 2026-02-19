@@ -14,6 +14,27 @@ body {
     background-color: #e9dde4;
 }
 
+header {
+    width: 100%;
+    max-width: 400px;
+}
+
+ul {
+    margin-top: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: #d46a92;
+    text-decoration: underline;
+}
+
 .main-content {
     display: flex;
     flex-direction: column;
