@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-button {
+.show-btn {
     width: 155px;
     height: 50px;
     border-radius: 24px;
@@ -326,4 +326,50 @@ body::before {
     font-size: 40px;
     color: white;
     cursor: pointer;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+@media (min-width: 768px) {
+    .divider::before, 
+    .divider::after {
+        width: 340px;
+    }
+
+    .photo-card img:hover {
+        transform: scale(1.5);
+    }
+}
+
+@media (min-width: 1024px) {
+    .divider::before, 
+    .divider::after {
+        width: 500px;
+    }
+
+    .photo-card img:hover {
+        transform: scale(1.25);
+    }
+
+    .gallery img:hover {
+        transform: scale(1.8);
+    }
 }

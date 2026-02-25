@@ -25,15 +25,15 @@
         <nav>
             <ul>
                 <li><a href="index.html">Heart</a></li>
-                <li><a href="#home">Home</a></li>
+                <li><a href="main.html">Home</a></li>
                 <li><a href="#video">Video</a></li>
-                <li><a href="#images">Images</a></li>
+                <li><a href="image-gallery.html">Images</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="hero-container" id="home">
-            <img src="./Assets/retro assets/memory-16.jpg" alt="Mommy and Daddy retro image" class="hero-img1">
+            <img src="./Assets/retro assets/memory-02.jpg" alt="Mommy and Daddy retro image" class="hero-img1">
             <section>
                 <h1>
                     30 years of Love<br>
@@ -67,7 +67,7 @@
 
             <div class="gallery-grid">
                 <div class="photo-card">
-                    <img src="./Assets/retro assets/memory-16.jpg" alt="Retro Mommy and Daddy">
+                    <img src="./Assets/retro assets/memory-02.jpg" alt="Retro Mommy and Daddy">
                 </div>
 
                 <div class="photo-card">
@@ -90,14 +90,34 @@
                     <img src="./Assets/family/memory-31.jpg" alt="under the sakura tree">
                 </div>
             </div>
-            <a href="image-gallery.html"><button>Show More</button></a>
+            <a href="image-gallery.html"><button class="show-btn">Show More /
+            <span>もっと見る</span></button></a>
         </div>
 
         <div class="image-modal" id="imageModal">
-            <span class="close-btn" id="closeModal">&times;</span>
+            <button class="nav-btn prev" id="prevBtn">&#10094;</button>
             <img class="modal-image" id="modalImage" src="" alt="">
+            <button class="nav-btn next" id="nextBtn">&#10095;</button>
+            <span class="close-btn" id="closeModal">&times;</span>
         </div>
-
     </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p class="footer-message">
+                30 Years. Countless Memories. Endless Gratitude.
+            </p>
+
+            <p class="footer-names">
+                – SUDA <span>須田</span> –
+            </p>
+
+            <a href="#top" class="back-to-top">Back to Top ↑</a>
+
+            <p class="copyright">
+                © 2026
+            </p>
+        </div>
+    </footer>
 </body>
 </html>

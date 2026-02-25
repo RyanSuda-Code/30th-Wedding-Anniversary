@@ -1,50 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const videos = document.querySelectorAll('.memory-video');
-
-  videos.forEach(video => {
-    const card = video.parentElement; // simpler & safer
-
-    video.addEventListener('play', function () {
-      card.classList.add('active');
-    });
-
-    video.addEventListener('pause', function () {
-      card.classList.remove('active');
-    });
-
-    video.addEventListener('ended', function () {
-      card.classList.remove('active');
-    });
-
-  });
-
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
   const images = document.querySelectorAll('.photo-card img');
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
   const closeBtn = document.getElementById('closeModal');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
 
-  images.forEach(image => {
+  let currentIndex = 0;
+
+  images.forEach((image, index) => {
     image.addEventListener('click', function () {
+      currentIndex = index;
+      modalImage.src = images[currentIndex].src;
       modal.classList.add('active');
-      modalImage.src = this.src;
     });
+  });
+
+  nextBtn.addEventListener('click', function () {
+    currentIndex++;
+    if (currentIndex >= images.length) {
+      currentIndex = 0; // loop back to start
+    }
+    modalImage.src = images[currentIndex].src;
+  });
+
+  prevBtn.addEventListener('click', function () {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = images.length - 1; // go to last image
+    }
+    modalImage.src = images[currentIndex].src;
   });
 
   closeBtn.addEventListener('click', function () {
     modal.classList.remove('active');
-  });
-
-  modal.addEventListener('click', function (e) {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-    }
   });
 
 });
@@ -92,21 +82,38 @@ Big image shows
 
 Click X or outside → closes
 
-This is exactly how modern portfolios work.
 
-Since this is for your anniversary website, this will make it feel way more polished.
 
-If you want next level later we can:
+How This Works next and previous image
+🔹 let currentIndex = 0;
 
-Add smooth fade animation
+Stores which image is currently open.
 
-Add left/right arrows
+🔹 When you click an image:
+images.forEach((image, index) => {
 
-Add image captions
+We capture the index.
 
-Add keyboard ESC close
+So if you click image #5:
 
-Add swipe support for mobile
+currentIndex = 4
+🔹 When clicking Next:
+currentIndex++
 
-Want to upgrade it step by step?
+We move forward.
+
+If we reach the end:
+
+currentIndex = 0
+
+Loop back to start.
+
+🔹 When clicking Previous:
+currentIndex--
+
+If below 0:
+
+currentIndex = images.length - 1
+
+Go to last image.
 */
