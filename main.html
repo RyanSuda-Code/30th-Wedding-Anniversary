@@ -31,6 +31,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <div class="hero-container" id="home">
             <img src="./Assets/retro assets/memory-02.jpg" alt="Mommy and Daddy retro image" class="hero-img1">
@@ -50,11 +51,38 @@
         <div class="video-gallery" id="video">
             <h2>Memories / <span lang="ja">思い出</span></h2>
 
-            <div class="video-card">
-               <video controls class="memory-video">
-                    <source src="./Assets/Videos/MD funny prank.mp4" type="video/mp4">
-                </video> 
-            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls class="memory-video">
+                            <source src="./Assets/Videos/MD funny prank.mp4" type="video/mp4">
+                        </video> 
+                    </div>
+
+                    <div class="video-card">
+                        <video controls class="memory-video">
+                            <source src="./Assets/Videos/daddy singing.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="video-card">
+                        <video controls class="memory-video">
+                            <source src="./Assets/Videos/daddy nikko.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="video-card">
+                        <video controls class="memory-video">
+                            <source src="./Assets/Videos/dmr nikko.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+										<div class="video-card">
+                        <video controls class="memory-video">
+                            <source src="./Assets/Videos/daddy, mommy, and mushashi sanpou.mp4" type="video/mp4">
+                        </video>
+                    </div>
+              </div>
+        </div>
             
         </div>
 
@@ -119,5 +147,12 @@
             </p>
         </div>
     </footer>
+
+    <div class="video-modal" id="videoModal">
+      <span class="close-video">&times;</span> 
+      <button class="prev-video">&#10094;</button>
+      <video class="modal-video" id="modalVideo" controls></video>
+      <button class="next-video">&#10095;</button>
+    </div>
 </body>
 </html>

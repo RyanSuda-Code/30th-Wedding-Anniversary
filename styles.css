@@ -1,7 +1,11 @@
 /*mobile first approach*/
 * {
-    outline: 1px solid red;
+    
     margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .show-btn {
@@ -31,7 +35,7 @@ body {
 
 header {
     width: 100%;
-    max-width: 400px;
+    max-width: 430px;
 }
 
 ul {
@@ -347,6 +351,56 @@ body::before {
 .next {
   right: 30px;
 }
+
+/*video modal*/
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.video-modal.active {
+  display: flex;
+}
+
+.modal-video {
+  width: 90%;
+  max-width: 800px;
+
+  max-height: 80vh;
+  height: auto;
+
+  border-radius: 12px;
+}
+
+.close-video {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.prev-video,
+.next-video {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev-video { left: 40px; }
+.next-video { right: 40px; }
 
 @media (min-width: 768px) {
     .divider::before, 
