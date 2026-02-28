@@ -39,60 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  const videos = document.querySelectorAll(".memory-video");
-  const modal = document.getElementById("videoModal");
-  const modalVideo = document.getElementById("modalVideo");
-
-  const closeBtn = document.querySelector(".close-video");
-  const nextBtn = document.querySelector(".next-video");
-  const prevBtn = document.querySelector(".prev-video");
-
-  let currentIndex = 0;
-
-  // Convert NodeList to array of sources
-  const videoSources = Array.from(videos).map(video =>
-    video.querySelector("source").src
-  );
-
-  function openModal(index) {
-    currentIndex = index;
-    modalVideo.src = videoSources[currentIndex];
-    modal.classList.add("active");
-    modalVideo.play();
-  }
-
-  function closeModal() {
-    modalVideo.pause();
-    modalVideo.src = "";
-    modal.classList.remove("active");
-  }
-
-  function showNext() {
-    currentIndex = (currentIndex + 1) % videoSources.length;
-    modalVideo.src = videoSources[currentIndex];
-    modalVideo.play();
-  }
-
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + videoSources.length) % videoSources.length;
-    modalVideo.src = videoSources[currentIndex];
-    modalVideo.play();
-  }
-
-  videos.forEach((video, index) => {
-    video.addEventListener("click", () => openModal(index));
-  });
-
-  closeBtn.addEventListener("click", closeModal);
-  nextBtn.addEventListener("click", showNext);
-  prevBtn.addEventListener("click", showPrev);
-
-});
-
-
 /*
 🧠 How It Works (Important for Study)
 Step 1:
@@ -171,3 +117,60 @@ currentIndex = images.length - 1
 
 Go to last image.
 */
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const videos = document.querySelectorAll(".memory-video");
+  const modal = document.getElementById("videoModal");
+  const modalVideo = document.getElementById("modalVideo");
+
+  const closeBtn = document.querySelector(".close-video");
+  const nextBtn = document.querySelector(".next-video");
+  const prevBtn = document.querySelector(".prev-video");
+
+  let currentIndex = 0;
+
+  // Convert NodeList to array of sources
+  const videoSources = Array.from(videos).map(video =>
+    video.querySelector("source").src
+  );
+
+  function openModal(index) {
+    currentIndex = index;
+    modalVideo.src = videoSources[currentIndex];
+    modal.classList.add("active");
+    modalVideo.play();
+  }
+
+  function closeModal() {
+    modalVideo.pause();
+    modalVideo.src = "";
+    modal.classList.remove("active");
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % videoSources.length;
+    modalVideo.src = videoSources[currentIndex];
+    modalVideo.play();
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + videoSources.length) % videoSources.length;
+    modalVideo.src = videoSources[currentIndex];
+    modalVideo.play();
+  }
+
+  videos.forEach((video, index) => {
+    video.addEventListener("click", () => openModal(index));
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+  nextBtn.addEventListener("click", showNext);
+  prevBtn.addEventListener("click", showPrev);
+
+});
+
+
