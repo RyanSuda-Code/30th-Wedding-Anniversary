@@ -138,8 +138,23 @@ document.addEventListener("DOMContentLoaded", () => {
     video.querySelector("source").src
   );
 
+  // 🔹 Pause all background videos
+  function pauseAllVideos() {
+  const allVideos = document.querySelectorAll("video");
+
+  allVideos.forEach(video => {
+    if (video !== modalVideo) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+}
+
   function openModal(index) {
     currentIndex = index;
+
+    pauseAllVideos(); // ✅ stop background video
+
     modalVideo.src = videoSources[currentIndex];
     modal.classList.add("active");
     modalVideo.play();
@@ -174,3 +189,38 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+const galleryVideos = document.querySelectorAll(".memory-video");
+const modal = document.querySelector(".video-modal");
+const modalVideo = document.querySelector(".modal-video");
+
+// When clicking a gallery video
+galleryVideos.forEach(video => {
+  video.addEventListener("click", () => {
+
+    // 1️⃣ Pause all gallery videos
+    galleryVideos.forEach(v => {
+      v.pause();
+      v.currentTime = 0;
+    });
+
+    // 2️⃣ Set modal video source
+    modalVideo.src = video.querySelector("source").src;
+
+    // 3️⃣ Show modal
+    modal.classList.add("show");
+
+    // 4️⃣ Play modal video
+    modalVideo.play();
+  });
+});
+
+
+const closeBtn = document.querySelector(".close-modal");
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("show");
+
+  modalVideo.pause();
+  modalVideo.currentTime = 0;
+});
