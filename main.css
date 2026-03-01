@@ -39,6 +39,7 @@ video {
     width: 100%;
     max-width: 430px;
     margin-top: 10px;
+    cursor: pointer;
 } 
 
 .gallery-grid {
